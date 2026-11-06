@@ -122,14 +122,14 @@ POST http://localhost:11434/api/generate
 
 Example request:
 
-```json
+
 {
   "model": "tinyllama",
   "system": "You are ASTRA, a helpful AI assistant.",
   "prompt": "What is React?",
   "stream": false
 }
-```
+
 
 Ollama processes the prompt and returns an AI-generated response together with performance information.
 
