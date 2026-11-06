@@ -77,6 +77,15 @@ function App() {
     localStorage.setItem("astra-chat", JSON.stringify(messages));
   }, [messages]);
 
+  // START A NEW CHAT
+  const startNewChat = () => {
+    if (loading) return;
+
+    setMessages([]);
+    setPrompt("");
+    localStorage.removeItem("astra-chat");
+  };
+
   // SEND MESSAGE TO OLLAMA
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -184,10 +193,21 @@ function App() {
           <h2>ASTRA</h2>
         </div>
 
-        <span className="status">
-          <span className="status-dot"></span>
-          {loading ? "Thinking..." : "AI Ready"}
-        </span>
+        <div className="navbar-actions">
+          <button
+            className="new-chat-btn"
+            onClick={startNewChat}
+            disabled={loading}
+            type="button"
+          >
+            + New Chat
+          </button>
+
+          <span className="status">
+            <span className="status-dot"></span>
+            {loading ? "Thinking..." : "AI Ready"}
+          </span>
+        </div>
       </header>
 
       <main className="chat-container">

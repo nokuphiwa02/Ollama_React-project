@@ -285,6 +285,36 @@ body {
 }
 
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.new-chat-btn {
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.new-chat-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.new-chat-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
 /* RESPONSIVE */
 
 @media (max-width: 600px) {
@@ -323,5 +353,16 @@ body {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-actions {
+    gap: 10px;
+  }
+
+  .new-chat-btn {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
