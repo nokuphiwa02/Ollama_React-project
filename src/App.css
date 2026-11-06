@@ -7,16 +7,18 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #f7f8ff;
+  background: #fbf9ff;
   color: #252544;
 }
 
 .app {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 15%, #e7ddff 0, transparent 35%),
-    radial-gradient(circle at 90% 85%, #dceaff 0, transparent 35%),
-    #f8f9ff;
+    radial-gradient(circle at 10% 10%, #ffd6e8 0, transparent 35%),
+    radial-gradient(circle at 90% 15%, #d6e8ff 0, transparent 35%),
+    radial-gradient(circle at 50% 95%, #e8d8ff 0, transparent 40%),
+    radial-gradient(circle at 80% 75%, #d2fff5 0, transparent 30%),
+    #fbf9ff;
 }
 
 /* NAVBAR */
@@ -29,8 +31,8 @@ body {
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(150, 140, 220, 0.15);
-  box-shadow: 0 4px 25px rgba(70, 60, 130, 0.05);
+  border-bottom: 1px solid rgba(150, 140, 220, 0.2);
+  box-shadow: 0 4px 25px rgba(70, 60, 130, 0.06);
 }
 
 .brand {
@@ -42,22 +44,27 @@ body {
 .brand h2 {
   font-size: 25px;
   letter-spacing: 3px;
-  color: #5541a5;
+  background: linear-gradient(90deg, #9333ea, #2563eb, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .logo {
   width: 48px;
   height: 48px;
   padding: 5px;
-  background: white;
+  background: linear-gradient(145deg, #ffffff, #f3eaff);
+  border: 1px solid #e5d5ff;
   border-radius: 14px;
-  box-shadow: 0 4px 15px rgba(100, 75, 180, 0.12);
+  box-shadow: 0 5px 18px rgba(147, 51, 234, 0.15);
 }
 
 .logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .status {
@@ -71,9 +78,9 @@ body {
 .status-dot {
   width: 9px;
   height: 9px;
-  background: #35c98a;
+  background: #20c997;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(53, 201, 138, 0.5);
+  box-shadow: 0 0 12px rgba(32, 201, 151, 0.6);
 }
 
 /* CHAT AREA */
@@ -100,22 +107,23 @@ body {
   height: 100px;
   padding: 12px;
   margin: 0 auto 22px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(150, 130, 220, 0.2);
+  background: linear-gradient(145deg, #ffffff, #f3eaff);
+  border: 1px solid #e5d5ff;
   border-radius: 28px;
-  box-shadow: 0 10px 35px rgba(100, 75, 180, 0.12);
+  box-shadow: 0 10px 35px rgba(147, 51, 234, 0.18);
 }
 
 .welcome-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .welcome h1 {
   font-size: 38px;
   margin-bottom: 12px;
-  background: linear-gradient(90deg, #7455d9, #428bdc);
+  background: linear-gradient(90deg, #9333ea, #3b82f6, #ec4899);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -144,10 +152,16 @@ body {
   gap: 12px;
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(140, 125, 210, 0.2);
+  border: 1px solid rgba(147, 51, 234, 0.2);
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(70, 60, 130, 0.08);
+  box-shadow: 0 8px 30px rgba(100, 70, 160, 0.1);
   backdrop-filter: blur(15px);
+  transition: 0.3s ease;
+}
+
+.prompt-form:focus-within {
+  border-color: #a855f7;
+  box-shadow: 0 8px 30px rgba(147, 51, 234, 0.16);
 }
 
 .prompt-form textarea {
@@ -171,16 +185,17 @@ body {
   height: 45px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, #8062e8, #5099e8);
+  background: linear-gradient(135deg, #9333ea, #3b82f6, #ec4899);
   color: white;
   font-size: 25px;
   cursor: pointer;
   transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(147, 51, 234, 0.2);
 }
 
 .prompt-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(110, 85, 210, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
 }
 
 .prompt-form button:disabled {
@@ -207,6 +222,10 @@ body {
     height: 75px;
   }
 
+  .brand h2 {
+    font-size: 21px;
+  }
+
   .chat-container {
     min-height: calc(100vh - 75px);
     padding: 50px 18px 25px;
@@ -223,5 +242,9 @@ body {
   .welcome-logo {
     width: 80px;
     height: 80px;
+  }
+
+  .prompt-form {
+    padding: 10px;
   }
 }
